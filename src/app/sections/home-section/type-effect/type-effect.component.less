@@ -1,0 +1,27 @@
+.text {
+  font-size: 45px;
+  // background: linear-gradient(270deg,#a0e9ff 30%,#a162e8 50%,#f093b0 70%,#edca85 94%);
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  color: white;
+  line-height: normal;
+  font-weight: 500;
+}
+.blink {
+  border-right: 3px solid white;
+  opacity: 0;
+  animation: blinking 0.9s linear infinite;
+  padding-left: 6px;
+  font-size: 38px;
+}
+  
+@keyframes blinking {
+    from,
+    49.9%{
+      opacity: 0;
+    }
+    50%,
+    to {
+      opacity: 1;
+    }
+}
