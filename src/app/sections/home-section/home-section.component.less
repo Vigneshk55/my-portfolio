@@ -3,6 +3,26 @@
     height: 100vh;
     background-color: #111111;
 
+    .img-animated {
+        animation: glide 2s ease-in-out infinite alternate-reverse both;
+
+        img {
+            height: 375px;
+        }
+    }
+
+    @keyframes glide  {
+        from {
+           left:0px;
+           top:0px;
+        }
+        
+        to {
+           left:0px;
+           top:20px;
+        }
+    }
+
     .home-title {
         font-size: 70px;
         font-family: Bogart;
@@ -11,6 +31,7 @@
         -webkit-text-fill-color: transparent;
         line-height: normal;
         font-weight: 500;
+        margin-bottom: 25px;
     }
     
     /deep/.typed-cursor{

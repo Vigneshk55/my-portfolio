@@ -13,9 +13,9 @@ export class TypeEffectComponent implements AfterViewInit {
   wordArray: string[] = [
     "Developer",
     "Designer",
-    // "Photographer"
+    "Photographer"
   ];
-  typingSpeedMilliseconds = 120;
+  typingSpeedMilliseconds = 140;
   deleteSpeedMilliseconds = 100;
 
   private i = 0;
