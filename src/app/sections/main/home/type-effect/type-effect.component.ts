@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-type-effect',
@@ -6,10 +6,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChi
   styleUrls: ['./type-effect.component.less']
 })
 export class TypeEffectComponent implements AfterViewInit {
-
-  @ViewChild("textElement")textElement!: ElementRef;
-  @ViewChild("blinkElement")blinkElement!: ElementRef;
-
+  @ViewChild("textElement") textElement!: ElementRef;
   wordArray: string[] = [
     "Developer",
     "Designer",
@@ -17,29 +14,24 @@ export class TypeEffectComponent implements AfterViewInit {
   ];
   typingSpeedMilliseconds = 140;
   deleteSpeedMilliseconds = 100;
-
   private i = 0;
-
-  constructor() {}
-
+  constructor() { }
   ngAfterViewInit(): void {
-    setTimeout(()=>{this.typingEffect();},1000);
+    setTimeout(() => { this.typingEffect(); }, 1000);
   }
-
   private typingEffect(): void {
     const word = this.wordArray[this.i].split("");
     const loopTyping = () => {
       if (word.length > 0) {
         this.textElement.nativeElement.innerHTML += word.shift();
       } else {
-        setTimeout(()=>{this.deletingEffect();},2500);
+        setTimeout(() => { this.deletingEffect(); }, 2500);
         return;
       }
       setTimeout(loopTyping, this.typingSpeedMilliseconds);
     };
     loopTyping();
   }
-
   private deletingEffect(): void {
     const word = this.wordArray[this.i].split("");
     const loopDeleting = () => {
@@ -47,13 +39,12 @@ export class TypeEffectComponent implements AfterViewInit {
         word.pop();
         this.textElement.nativeElement.innerHTML = word.join("");
       } else {
-        this.i = this.wordArray.length > this.i + 1 ? this.i+1 : 0;
-        setTimeout(()=>{this.typingEffect();},1000)
-        let val :any = false;
+        this.i = this.wordArray.length > this.i + 1 ? this.i + 1 : 0;
+        setTimeout(() => { this.typingEffect(); }, 1000)
+        let val: any = false;
         return val;
       }
       setTimeout(loopDeleting, this.deleteSpeedMilliseconds);
-      
     };
     loopDeleting();
   }

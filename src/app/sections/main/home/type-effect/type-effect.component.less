@@ -1,0 +1,30 @@
+.text {
+    font-size: 55px;
+    font-family: Bogart;
+    background: linear-gradient(270deg, #A0E9FF 30%, #A162E8 50%, #F093B0 70%, #EDCA85 94%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: normal;
+    font-weight: 500;
+}
+
+.blink {
+    border-right: 3px solid white;
+    opacity: 0;
+    animation: blinking 0.9s linear infinite;
+    padding-left: 6px;
+    font-size: 40px;
+}
+
+@keyframes blinking {
+
+    from,
+    49.9% {
+        opacity: 0;
+    }
+
+    50%,
+    to {
+        opacity: 1;
+    }
+}
