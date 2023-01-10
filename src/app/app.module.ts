@@ -8,12 +8,15 @@ import { TypingAnimationModule } from 'angular-typing-animation';
 import { MainComponent } from './sections/main/main.component';
 import { HomeComponent } from './sections/main/home/home.component';
 import { TypeEffectComponent } from './sections/main/home/type-effect/type-effect.component';
+import { AboutComponent } from './sections/main/about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HomeComponent,
-    TypeEffectComponent
+    TypeEffectComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
