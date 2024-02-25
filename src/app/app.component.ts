@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrl: './app.component.less'
 })
 export class AppComponent {
-  title = 'vigneshk';
+  title = 'my-portfolio';
 }
